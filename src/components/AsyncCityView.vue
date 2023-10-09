@@ -151,9 +151,6 @@ const convertFtoC = (tempF) => {
   const currTempInCel = Math.round((tempF - 32) * (5 / 9));
   return currTempInCel;
 };
-// const currTempInFar = Math.round(weatherData.current.temp);
-// const currTempInCel = Math.round((currTempInFar - 32) * (5 / 9));
-// console.log(weatherData);
 
 const router = useRouter();
 const removeCity = () => {
