@@ -28,11 +28,11 @@
         }}
       </p>
       <p class="text-8xl mb-8">
-        {{ Math.round(weatherData.current.temp) }}&deg;
+        {{ convertFtoC(weatherData.current.temp) }}&deg; C
       </p>
       <p>
         Feels like
-        {{ Math.round(weatherData.current.feels_like) }} &deg;
+        {{ convertFtoC(weatherData.current.feels_like) }} &deg; C
       </p>
       <p class="capitalize">
         {{ weatherData.current.weather[0].description }}
@@ -68,7 +68,7 @@
               :src="`http://openweathermap.org/img/wn/${hourData.weather[0].icon}@2x.png`"
               alt=""
             />
-            <p class="text-xl">{{ Math.round(hourData.temp) }}&deg;</p>
+            <p class="text-xl">{{ convertFtoC(hourData.temp) }}&deg;</p>
           </div>
         </div>
       </div>
@@ -98,8 +98,8 @@
             alt=""
           />
           <div class="flex gap-2 flex-1 justify-end">
-            <p>H: {{ Math.round(day.temp.max) }}</p>
-            <p>L: {{ Math.round(day.temp.min) }}</p>
+            <p>H: {{ convertFtoC(day.temp.max) }}&deg;</p>
+            <p>L: {{ convertFtoC(day.temp.min) }}&deg;</p>
           </div>
         </div>
       </div>
@@ -147,6 +147,12 @@ const getWeatherData = async () => {
   }
 };
 const weatherData = await getWeatherData();
+const convertFtoC = (tempF) => {
+  const currTempInCel = Math.round((tempF - 32) * (5 / 9));
+  return currTempInCel;
+};
+// const currTempInFar = Math.round(weatherData.current.temp);
+// const currTempInCel = Math.round((currTempInFar - 32) * (5 / 9));
 // console.log(weatherData);
 
 const router = useRouter();
