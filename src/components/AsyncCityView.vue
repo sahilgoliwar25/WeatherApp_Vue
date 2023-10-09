@@ -3,7 +3,7 @@
     <!-- Banner -->
     <div
       v-if="route.query.preview"
-      class="text-white p-4 bg-weather-secondary w-full text-center"
+      class="text-black p-4 bg-weather-secondary w-full text-center"
     >
       <p>
         You are currently previewing this city, click the "+" icon to start
@@ -11,7 +11,7 @@
       </p>
     </div>
     <!-- Weather Overview -->
-    <div class="flex flex-col items-center text-white py-12">
+    <div class="flex flex-col items-center text-black py-12">
       <h1 class="text-4xl mb-2">{{ route.params.city }}</h1>
       <p class="text-sm mb-12">
         {{
@@ -44,11 +44,11 @@
       />
     </div>
 
-    <hr class="border-white border-opacity-10 border w-full" />
+    <hr class="border-black border-opacity-10 border w-full" />
 
     <!-- Hourly Weather -->
     <div class="max-w-screen-md w-full py-12">
-      <div class="mx-8 text-white">
+      <div class="mx-8 text-black">
         <h2 class="mb-4">Hourly Weather</h2>
         <div class="flex gap-10 overflow-x-scroll">
           <div
@@ -74,11 +74,11 @@
       </div>
     </div>
 
-    <hr class="border-white border-opacity-10 border w-full" />
+    <hr class="border-black border-opacity-10 border w-full" />
 
     <!-- Weekly Weather -->
     <div class="max-w-screen-md w-full py-12">
-      <div class="mx-8 text-white">
+      <div class="mx-8 text-black">
         <h2 class="mb-4">7 Day Forecast</h2>
         <div
           v-for="day in weatherData.daily"
@@ -106,7 +106,7 @@
     </div>
 
     <div
-      class="flex items-center gap-2 py-12 text-white cursor-pointer duration-150 hover:text-red-500"
+      class="flex items-center gap-2 py-12 text-black cursor-pointer duration-150 hover:text-red-500"
       @click="removeCity"
     >
       <i class="fa-solid fa-trash"></i>
